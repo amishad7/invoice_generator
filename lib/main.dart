@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invoice_generator/Screens/ThirdPage.dart';
 import 'package:invoice_generator/Screens/first_page.dart';
 import 'package:invoice_generator/Screens/secondPage.dart';
 
@@ -11,6 +12,7 @@ void main() {
       routes: {
         '/': (context) => const HomePage(),
         'two': (context) => const Info_Page(),
+        'three': (context) => const CartPage(),
       },
     ),
   );

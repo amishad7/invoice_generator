@@ -492,4 +492,5 @@ class Global {
       ],
     },
   ];
+  static List cartProducts = [];
 }

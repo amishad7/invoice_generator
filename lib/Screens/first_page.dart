@@ -17,12 +17,34 @@ class _HomePageState extends State<HomePage> {
         centerTitle: false,
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.person),
+            onPressed: () {
+              setState(() {
+                Navigator.of(context).pushNamed('three');
+              });
+            },
+            icon: const Icon(CupertinoIcons.cart),
           ),
         ],
         title: const Text("Home"),
         shadowColor: Colors.grey,
+      ),
+      drawer: const Drawer(
+        child: Column(
+          children: [
+            SizedBox(height: 80),
+            CircleAvatar(
+              radius: 100,
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Archi",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
       body: Container(
         child: SingleChildScrollView(
@@ -57,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                                     image: NetworkImage(e['thumbnail']),
                                     fit: BoxFit.cover,
                                   ),
-                                  borderRadius: BorderRadius.all(
+                                  borderRadius: const BorderRadius.all(
                                     Radius.circular(10),
                                   ),
                                 ),
@@ -65,8 +87,8 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Container(
                                       width: double.infinity,
-                                      padding:
-                                          EdgeInsets.only(top: 12, left: 10),
+                                      padding: const EdgeInsets.only(
+                                          top: 12, left: 10),
                                       height:
                                           MediaQuery.of(context).size.height /
                                               12,
@@ -76,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                       child: Text(
                                         "${e['title']}",
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           letterSpacing: -2,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.black,
@@ -101,18 +123,25 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         // backgroundColor: Colors.black87,
-        items: [
-          const BottomNavigationBarItem(
+        items: const [
+          BottomNavigationBarItem(
             label: 'Home',
             icon: Icon(
               Icons.home,
               // color: Colors.white,
             ),
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             label: 'Invoice',
             icon: Icon(
               CupertinoIcons.doc_chart,
+              // color: Colors.white,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: 'My Cart',
+            icon: Icon(
+              CupertinoIcons.cart,
               // color: Colors.white,
             ),
           ),
