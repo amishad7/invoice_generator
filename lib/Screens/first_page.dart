@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  int navigationIndex = 0;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -28,12 +29,14 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Home"),
         shadowColor: Colors.grey,
       ),
-      drawer: const Drawer(
+      drawer: Drawer(
         child: Column(
           children: [
             SizedBox(height: 80),
             CircleAvatar(
               radius: 100,
+              backgroundImage: NetworkImage(
+                  'https://cdn3.vectorstock.com/i/1000x1000/72/82/female-avatar-profile-icon-round-woman-face-vector-18307282.jpg'),
             ),
             SizedBox(height: 20),
             Text(
@@ -42,6 +45,31 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
+            ),
+            Divider(),
+            SizedBox(height: 8),
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      Navigator.pushNamed(context, 'fourth');
+                    });
+                  },
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    color: Colors.transparent,
+                    padding: EdgeInsets.only(left: 10),
+                    width: 250,
+                    height: 45,
+                    child: Text(
+                      " Invoice",
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+                Icon(Icons.arrow_forward_ios_outlined)
+              ],
             ),
           ],
         ),
@@ -122,6 +150,18 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (value) {
+          setState(() {
+            navigationIndex = value;
+
+            (navigationIndex == 2)
+                ? Navigator.of(context).pushNamed('three')
+                : (navigationIndex == 1)
+                    ? Navigator.of(context).pushNamed('fourth')
+                    : Navigator.of(context).pushNamed('/');
+          });
+        },
+        currentIndex: navigationIndex,
         // backgroundColor: Colors.black87,
         items: const [
           BottomNavigationBarItem(
