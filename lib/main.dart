@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invoice_generator/Screens/Preview.dart';
 import 'package:invoice_generator/Screens/ThirdPage.dart';
 import 'package:invoice_generator/Screens/first_page.dart';
 import 'package:invoice_generator/Screens/fourth.dart';
@@ -15,6 +16,7 @@ void main() {
         'two': (context) => const Info_Page(),
         'three': (context) => const CartPage(),
         'fourth': (context) => const InvoicePage_(),
+        'PDF': (context) => const PDF_View(),
       },
     ),
   );

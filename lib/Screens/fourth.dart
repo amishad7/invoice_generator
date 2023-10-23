@@ -13,15 +13,21 @@ class _InvoicePage_State extends State<InvoicePage_> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Invoice"),
+        title: const Text("Invoice"),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        icon: Icon(Icons.print),
-        onPressed: () {},
-        label: Text("Print Invoice"),
+        backgroundColor: Colors.white24,
+        icon: const Icon(Icons.print),
+        onPressed: () {
+          Navigator.pushNamed(context, 'PDF');
+        },
+        label: const Text(
+          "Print Invoice",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+        margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.grey),
           borderRadius: BorderRadius.circular(20),
@@ -44,9 +50,9 @@ class _InvoicePage_State extends State<InvoicePage_> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 23, right: 23),
+                    padding: const EdgeInsets.only(left: 23, right: 23),
                     color: Colors.transparent,
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Invoice Number :"),
@@ -54,11 +60,11 @@ class _InvoicePage_State extends State<InvoicePage_> {
                       ],
                     ),
                   ),
-                  Divider(),
+                  const Divider(),
                   Container(
-                    padding: EdgeInsets.only(left: 23, right: 23),
+                    padding: const EdgeInsets.only(left: 23, right: 23),
                     color: Colors.transparent,
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Invoice Date :"),
@@ -66,11 +72,11 @@ class _InvoicePage_State extends State<InvoicePage_> {
                       ],
                     ),
                   ),
-                  Divider(),
+                  const Divider(),
                   Container(
-                    padding: EdgeInsets.only(left: 23, right: 23),
+                    padding: const EdgeInsets.only(left: 23, right: 23),
                     color: Colors.transparent,
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Invoice Date Due:"),
@@ -94,9 +100,9 @@ class _InvoicePage_State extends State<InvoicePage_> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 23, right: 23),
+                    padding: const EdgeInsets.only(left: 23, right: 23),
                     color: Colors.transparent,
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Total Products :"),
@@ -104,11 +110,11 @@ class _InvoicePage_State extends State<InvoicePage_> {
                       ],
                     ),
                   ),
-                  Divider(),
+                  const Divider(),
                   Container(
-                    padding: EdgeInsets.only(left: 23, right: 23),
+                    padding: const EdgeInsets.only(left: 23, right: 23),
                     color: Colors.transparent,
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Total Price :"),
@@ -120,8 +126,8 @@ class _InvoicePage_State extends State<InvoicePage_> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 21),
-              child: Text(
+              margin: const EdgeInsets.only(left: 21),
+              child: const Text(
                 "Invoice for",
                 style: TextStyle(fontSize: 30),
               ),
@@ -139,9 +145,9 @@ class _InvoicePage_State extends State<InvoicePage_> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 23, right: 23),
+                    padding: const EdgeInsets.only(left: 23, right: 23),
                     color: Colors.transparent,
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
@@ -152,15 +158,15 @@ class _InvoicePage_State extends State<InvoicePage_> {
                       ],
                     ),
                   ),
-                  Divider(),
+                  const Divider(),
                   Container(
-                    padding: EdgeInsets.only(left: 23, right: 23),
+                    padding: const EdgeInsets.only(left: 23, right: 23),
                     color: Colors.transparent,
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Email Addresess :",
+                          "Email Address :",
                           style: TextStyle(fontSize: 12),
                         ),
                         Text("archi@gmail.com"),
@@ -170,7 +176,7 @@ class _InvoicePage_State extends State<InvoicePage_> {
                 ],
               ),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
           ],
         ),
       ),
