@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pdf/pdf.dart';
-import 'package:printing/printing.dart';
-
 import 'package:pdf/widgets.dart' as pw;
+import 'package:printing/printing.dart';
 
 class PDF_View extends StatefulWidget {
   const PDF_View({super.key});
@@ -48,7 +47,6 @@ class _PDF_ViewState extends State<PDF_View> {
                     pw.Row(
                       mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                       children: [
-                        pw.SizedBox(height: 20),
                         pw.Text(
                           "Invoice to: ",
                           style: pw.TextStyle(
@@ -95,6 +93,8 @@ class _PDF_ViewState extends State<PDF_View> {
                         pw.Expanded(
                           flex: 3,
                           child: pw.Container(
+                            padding: pw.EdgeInsets.only(
+                                top: 20, left: 10, bottom: 10),
                             color: PdfColors.black,
                             child: pw.Text(
                               "Products ",
@@ -111,6 +111,8 @@ class _PDF_ViewState extends State<PDF_View> {
                           flex: 1,
                           child: pw.Container(
                             color: PdfColors.black,
+                            padding: pw.EdgeInsets.only(
+                                top: 20, left: 10, bottom: 10),
                             child: pw.Text(
                               "Qty ",
                               style: pw.TextStyle(
@@ -126,6 +128,8 @@ class _PDF_ViewState extends State<PDF_View> {
                           flex: 1,
                           child: pw.Container(
                             color: PdfColors.black,
+                            padding: pw.EdgeInsets.only(
+                                top: 20, left: 10, bottom: 10),
                             child: pw.Text(
                               "Price ",
                               style: pw.TextStyle(
@@ -142,6 +146,8 @@ class _PDF_ViewState extends State<PDF_View> {
                           child: pw.Container(
                             alignment: pw.Alignment.bottomRight,
                             color: PdfColors.black,
+                            padding: pw.EdgeInsets.only(
+                                top: 20, left: 10, bottom: 10),
                             child: pw.Text(
                               "Total ",
                               style: pw.TextStyle(
@@ -152,6 +158,84 @@ class _PDF_ViewState extends State<PDF_View> {
                               ),
                             ),
                           ),
+                        ),
+                      ],
+                    ),
+                    pw.SizedBox(height: 11),
+                    pw.Divider(),
+                    pw.Row(
+                      children: [
+                        pw.Expanded(
+                          flex: 3,
+                          child: pw.Container(
+                            color: PdfColors.white,
+                            child: pw.Text(
+                              "No Products ",
+                              style: pw.TextStyle(
+                                wordSpacing: 1,
+                                color: PdfColors.black,
+                                fontWeight: pw.FontWeight.normal,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ),
+                        ),
+                        pw.Expanded(
+                          flex: 1,
+                          child: pw.Container(
+                            color: PdfColors.white,
+                            child: pw.Text(
+                              "0 ",
+                              style: pw.TextStyle(
+                                wordSpacing: 1,
+                                color: PdfColors.black,
+                                fontWeight: pw.FontWeight.normal,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ),
+                        ),
+                        pw.Expanded(
+                          flex: 1,
+                          child: pw.Container(
+                            color: PdfColors.white,
+                            child: pw.Text(
+                              "0.0 ",
+                              style: pw.TextStyle(
+                                wordSpacing: 1,
+                                color: PdfColors.black,
+                                fontWeight: pw.FontWeight.normal,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ),
+                        ),
+                        pw.Expanded(
+                          flex: 1,
+                          child: pw.Container(
+                            alignment: pw.Alignment.bottomRight,
+                            color: PdfColors.white,
+                            child: pw.Text(
+                              "0.0 ",
+                              style: pw.TextStyle(
+                                wordSpacing: 1,
+                                color: PdfColors.black,
+                                fontWeight: pw.FontWeight.normal,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    pw.Divider(),
+                    pw.SizedBox(height: 100),
+                    pw.Divider(),
+                    pw.Row(
+                      mainAxisAlignment: pw.MainAxisAlignment.end,
+                      children: [
+                        pw.Container(
+                          child: pw.Text("Total: 0.0"),
                         ),
                       ],
                     ),
